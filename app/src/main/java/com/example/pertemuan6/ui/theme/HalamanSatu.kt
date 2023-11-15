@@ -111,11 +111,14 @@ fun HalamanSatu(
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
                 verticalAlignment = Alignment.Bottom
             ){
-                OutlinedButton(
-                    modifier = Modifier.weight(1f),
+                OutlinedButton(modifier = Modifier.weight(1f), onClick = onCancelButtonClicked) {
+                    Text(stringResource(R.string.cancel) )
+                }
+                Button(modifier = Modifier.weight(1f),
                     enabled = textJmlBeli.isNotEmpty(),
-                    onClick = onNextButtonClicked) {
-                    Text(stringResource(R.string.next))
+                    onClick = onNextButtonClicked
+                ) {
+                    Text(text = stringResource(R.string.next))
                 }
             }
         }

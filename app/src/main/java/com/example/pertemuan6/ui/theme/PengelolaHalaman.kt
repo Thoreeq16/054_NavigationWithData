@@ -121,13 +121,16 @@ fun EsJumboApp(
     }
 }
 
-private fun cancelOrderAndNavigateToRasa(navController: NavHostController) {
-    navController.popBackStack(PengelolaHalaman.Rasa.name,inclusive = false)
-}
 
 private fun cancelOrderAndNavigateToHome(viewModel: OrderViewModel, navController: NavHostController) {
     viewModel.resetOrder()
     navController.popBackStack(PengelolaHalaman.Home.name, inclusive = false)
 }
+
+private fun cancelOrderAndNavigateToRasa(navController: NavHostController) {
+    navController.popBackStack(PengelolaHalaman.Rasa.name,inclusive = false)
+}
+
+
 
 
