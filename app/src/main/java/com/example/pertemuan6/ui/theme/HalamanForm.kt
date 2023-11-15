@@ -85,10 +85,10 @@ fun HalamanForm(
         Row (modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            Button(onClick = {onBackButtonCLicked}) {
-                Text(text = stringResource(id = R.string.back_button))
+            Button(modifier = Modifier.weight(1f), onClick = onBackButtonCLicked) {
+                Text(stringResource(R.string.cancel) )
             }
-            Button(onClick = {onSubmitButtonClicked(listData)}) {
+            Button(modifier = Modifier.weight(1f), onClick = {onSubmitButtonClicked(listData)}) {
                 Text(text = stringResource(id = R.string.submit_button))
             }
         }
