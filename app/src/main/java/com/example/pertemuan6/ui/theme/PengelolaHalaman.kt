@@ -43,7 +43,7 @@ fun EsJumboAppbar(
     modifier: Modifier = Modifier
 ){
     TopAppBar(
-        title = { Text(stringResource(R.string.app_name))},
+        title = { Text(stringResource(id = R.string.app_name))},
         colors = TopAppBarDefaults.mediumTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
@@ -51,10 +51,7 @@ fun EsJumboAppbar(
         navigationIcon = {
             if (bisaNavigasiBack){
                 IconButton(
-                    onClick = {
-                        navigasiUp
-                    }
-                ) {
+                    onClick = navigasiUp) {
                     Icon(imageVector = Icons.Filled.ArrowBack,
                         contentDescription = stringResource(R.string.back_button))
                 }
@@ -77,6 +74,7 @@ fun EsJumboApp(
         }
     ) {innerPadding ->
         val uiState by viewModel.stateUI.collectAsState()
+        val nameState by viewModel.nameST.collectAsState()
         NavHost(
             navController = navController,
             startDestination = PengelolaHalaman.Home.name,
