@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import com.example.pertemuan6.R
 import com.example.pertemuan6.data.FormData
 import com.example.pertemuan6.data.OrderUIState
+import com.example.pertemuan6.ui.component.FormatDataPemesanan
 import com.example.pertemuan6.ui.component.FormatLabelHarga
 
 
@@ -42,6 +43,11 @@ fun HalamanDua(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
+            FormatDataPemesanan(
+                namaPemesanan = formData.nama,
+                alamatPemesan = formData.alamat,
+                phonePemesan = formData.phone
+            )
             items.forEach { items ->
                 Column {
                     Text(items.first.uppercase())
