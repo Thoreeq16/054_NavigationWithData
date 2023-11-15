@@ -45,7 +45,7 @@ class OrderViewModel : ViewModel(){
     }
 }
 
-private fun hitungHarga(jumlah: Int): String {
+private fun hitungHarga(jumlah: Int ): String {
     val kalkulasiHarga = jumlah * HARGA_PER_CUP
     return NumberFormat.getNumberInstance().format(kalkulasiHarga)
 }
