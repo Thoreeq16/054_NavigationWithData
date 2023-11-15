@@ -89,6 +89,15 @@ fun EsJumboApp(
                 )
             }
 
+            composable(route = PengelolaHalaman.Form.name){
+                HalamanForm(
+                    onSubmitButtonClicked = {
+                        viewModel.setNama(it)
+                        navController.navigate(PengelolaHalaman.Rasa.name)},
+                    onBackButtonCLicked = {navController.popBackStack()
+                    })
+            }
+
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
                 HalamanSatu(
